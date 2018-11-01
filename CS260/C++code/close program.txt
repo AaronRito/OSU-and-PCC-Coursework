@@ -1,0 +1,10 @@
+	//abort the program 
+ 
+void abortProgram()
+
+{
+    string line;
+    cout << "Please press <Enter> to quit:";
+    getline(cin, line);
+    exit(1);
+}

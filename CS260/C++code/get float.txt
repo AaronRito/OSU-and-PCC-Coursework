@@ -1,0 +1,13 @@
+float getFloat()
+{
+	float	value;
+	cin >> value;
+	while (!cin)
+	{
+		cin.clear(); //clear the flag
+		cin.ignore(MAX_CHAR, '\n'); //empty the buffer
+		cout << "Please enter a valid price ex. 4.95 : ";
+		cin >> value;
+	}
+	cin.ignore(MAX_CHAR, '\n');
+	return value;

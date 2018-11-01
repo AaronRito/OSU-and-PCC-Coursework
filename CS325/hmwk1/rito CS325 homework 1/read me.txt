@@ -1,0 +1,13 @@
+Aaron Rito
+CS325
+Homework 1 problem 4 readme
+
+To run merge sort: In the flip server command line type "python ./merge.py"
+The results will output to a file called merge.txt
+
+To run insertion sort: In the flip server command line type "python ./insert.py"
+The results will output to a file called insert.txt
+
+Sources:
+http://markmiyashita.com/interviews/problems/merge_sort/
+https://gist.github.com/basarat/3216903

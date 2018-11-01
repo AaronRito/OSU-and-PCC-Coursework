@@ -1,0 +1,56 @@
+// Example of Arithmetic and Formatting
+// Sep 30, 2005
+// Author: Colin Goble
+// Sources: None
+// Compiled with: Bloodshed C++ version 4.9.9.2 and Visual Studio.Net, version 7.1
+
+#include <iostream>
+#include <iomanip>          // You need this include for fixed and setprecision below.
+#include <string>
+
+using namespace std;
+
+const double STATE_SALES_TAX = 0.095;
+
+int main ()
+{
+    string itemName;
+    double itemUnitPrice;
+    int    itemQuantity;
+    double itemTotalPrice;
+    double salesTax;
+    double itemTotalPriceWithTax;
+
+    // Set the state of the output stream to format using 2 places of decimals.
+    // Note that the settings are "sticky". You only need to set them once at the beginning.
+    cout << fixed;            // Set the output stream to display floating point numbers..
+                              // ... in fixed point notation rather than scientific notation.
+    cout << setprecision(2);  // Set the output stream to display exactly 2 places of decimals...
+                              // ... just like a U.S. currency is displayed
+	
+    // Handle the user dialog
+    cout << "Welcome to Colin's Store!" << endl;
+    cout << "What item are you buying? ";
+    cin >> itemName;
+    cout << "Please enter the unit price: $";
+    cin >> itemUnitPrice;
+    cout << "Please enter the quantity: ";
+    cin >> itemQuantity;
+
+    // Calculate the results
+    itemTotalPrice = itemUnitPrice * itemQuantity;
+    salesTax = STATE_SALES_TAX * itemTotalPrice;
+    itemTotalPriceWithTax = itemTotalPrice + salesTax;
+
+    // Output the results
+    cout << "The total price for your " << itemName
+         << " is $" << itemTotalPrice << endl;
+    cout << "The sales tax is $" << salesTax << endl;
+    cout << "Your total bill is $" 
+         << itemTotalPriceWithTax << endl;
+
+    // "Pause" so the user can see the results
+    char reply;
+    cout << "Enter q to quit... ";
+    cin >> reply;
+    return 0;

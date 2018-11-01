@@ -1,0 +1,46 @@
+ // This is a demonstration of old-style (C-strings)
+// It uses the standard cstring library which you can look up here:
+// http://www.cplusplus.com/ref/cstring/
+// Author: Colin Goble
+// Date: 03-August-2006
+// Sources: None
+
+#include <iostream>
+#include <cstring>
+
+using namespace std;
+
+int main ()
+{
+    char string1[] = "Hello World!";
+    cout << string1 << endl;
+    
+    // Note that the string2 array must be large enough to hold the longest string that might go there.
+    char string2[100];
+    
+    // Note that we CANNOT use the assignment operator to copy old-style cstrings (unlike the new C++ string type).
+    // The following assignment DOES NOT WORK as you might expect.
+    // string2 = string1;
+    
+    // Instead we MUST use the strncpy function which copies up to n chars from source to destination.
+    strncpy (string2, string1, 100);
+    cout << string2 << endl;
+    
+    // Likewise, if we want to compare two strings we CANNOT do this
+    if (string1 == string2) {
+        cout << "Using == the strings are the same." << endl;
+    } else {
+        cout << "Using == the strings are different." << endl;
+    }
+    // Instead we should use the strcmp function which returns 0 if the strings are the same.
+    if (strcmp(string1, string2) == 0) {
+        cout << "Using strcmp the strings are the same." << endl;
+    } else {
+        cout << "Using strcmp the strings are different." << endl;
+    }
+    
+    char reply;
+    cout << "Press q to quit: ";
+    cin >> reply; 
+    return 0;   
+}

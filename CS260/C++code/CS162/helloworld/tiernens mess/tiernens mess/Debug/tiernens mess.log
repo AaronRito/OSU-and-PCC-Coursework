@@ -1,0 +1,15 @@
+﻿Build started 8/14/2014 11:31:00 PM.
+     1>Project "C:\Users\aaron\Desktop\CS162\helloworld\tiernens mess\tiernens mess\tiernens mess.vcxproj" on node 2 (Rebuild target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt Source.cpp
+         Source.cpp
+     1>c:\users\aaron\desktop\cs162\helloworld\tiernens mess\tiernens mess\source.cpp(9): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+     1>c:\users\aaron\desktop\cs162\helloworld\tiernens mess\tiernens mess\source.cpp(10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\aaron\Desktop\CS162\helloworld\tiernens mess\Debug\tiernens mess.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\aaron\Desktop\CS162\helloworld\tiernens mess\Debug\tiernens mess.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\aaron\Desktop\CS162\helloworld\tiernens mess\Debug\tiernens mess.lib" /MACHINE:X86 Debug\Source.obj
+         tiernens mess.vcxproj -> C:\Users\aaron\Desktop\CS162\helloworld\tiernens mess\Debug\tiernens mess.exe
+     1>Done Building Project "C:\Users\aaron\Desktop\CS162\helloworld\tiernens mess\tiernens mess\tiernens mess.vcxproj" (Rebuild target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:01.97

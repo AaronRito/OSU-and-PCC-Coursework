@@ -1,0 +1,7 @@
+Aaron Rito
+CS325 homewrok 2 problem 5 read me
+
+To run the program: type "python ./stooge.py" in the command line with your data file of test values called "data.txt". 
+The result will be in a text file called "stooge.out"
+
+Sources: http://www.ispycode.com/Python/Data-Types/Sorting/Stooge-Sort 

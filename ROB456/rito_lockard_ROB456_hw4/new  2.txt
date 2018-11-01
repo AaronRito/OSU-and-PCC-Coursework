@@ -1,0 +1,25 @@
+sends waypoints to robots
+"look at map array for concentrations of -1's. 
+create waypoint and find shortest path with A*
+publish waypoint to robot. "
+
+uses SLAM
+"automatic"
+
+exploration strategy
+"find unexplored areas by searching out -1's and setting waypoint, ends when #% of array is not -1 BST?"
+
+works dynamically
+"A* is good. obstacle avoidance good"
+
+find unexplored area
+"find unexplored areas by searching out -1's and setting waypoint, ends when #% of array is not -1 BST?"
+
+waypoint fail
+"ignore area and search for next waypoint"
+
+exploration algorithm
+"A*"
+
+works on all worlds
+"redundancy"

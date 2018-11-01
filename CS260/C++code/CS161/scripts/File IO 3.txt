@@ -1,0 +1,63 @@
+// This demo demonstrates reading and re-winding a disk file.
+// In the first section we read the file one line at a time.
+// Then we 'rewind' the file and read it one token at a time.
+// Written by: Colin Goble
+// Sources: None
+// Date: 20-Oct-2005
+
+#include <iostream>
+#include <fstream>
+#include <string>
+
+using namespace std;
+
+int main ()
+{
+    // Declarations
+    string reply;
+    string line;
+    string token;
+    string inputFileName;
+    ifstream inputFile;
+
+    cout << "Input file name: ";
+    getline(cin, inputFileName);
+
+    // Open the input file.
+    inputFile.open(inputFileName.c_str());      // Need .c_str() to convert a C++ string to a C-style string
+    // The next line can be used instead of the preceding if the file name is "hard coded" in the program.
+    // This saves a lot of time typing in the file name over and over while you are debugging.
+    // inputFile.open("C:\\CS161\\Demo\\text.txt");		// Need \\ to represent a single '\'
+
+    // Check the file opened successfully.
+    if ( ! inputFile.is_open()) {
+        cout << "Unable to open input file." << endl;
+        cout << "Press enter to continue...";
+        getline(cin, reply);
+        exit(1);
+    }
+
+    // This section reads and echo's the file one line at a time.
+    while (inputFile.peek() != EOF) {
+        getline(inputFile, line);
+        cout << line << endl;
+    }
+    cout << "\nEnd of file reached\n" << endl;
+
+    // Must clear the end-of-file flag to be able to rewind and re-read from the beginning.
+    inputFile.clear();
+    // 'Rewind' the input stream to the beginning - i.e. byte 0
+    inputFile.seekg(0);
+
+    // Now read the file one token at a time	
+    while (inputFile >> token) {
+        cout << token << endl;
+    }
+    cout << "\nEnd of file reached\n" << endl;
+
+    // Close the input file stream
+    inputFile.close();
+    cout << "Press enter to continue...";
+    getline(cin, reply);
+    return 0;	
+}

@@ -1,0 +1,101 @@
+// This is a demonstration of old-style (C-strings)
+// Author: Colin Goble
+// Date: 03-August-2006
+// Sources: None
+
+#include <iostream>
+
+using namespace std;
+
+// printString() prints a string (an array of chars) of any length
+void printString (char s[]);
+// Note that the source string doesn't change, hence the use of 'const' in the declaration.
+void copyString (char dest[], const char source[]);
+// compareString() returns true if the strings are equal, otherwise false.
+bool compareString (const char s1[], const char s2[]);
+
+int main ()
+{
+    // An old-style 'cstring' is just an array of chars.
+    // It MUST be terminated with a byte all of whose bits are set to zero.
+    // We can do this with the special char escape sequence \0
+    char string1[12] = {'H', 'e', 'l', 'l', 'o', ' ', 'W', 'o', 'r', 'l', 'd', '\0'};
+    cout << string1 << endl;
+    
+    // If we don't specify the length of the array, C++ uses the number of initializers by default
+    char string2[] = {'T', 'h', 'i', 's', ' ', 'i', 's', ' ', 's', 't', 'r', 'i', 'n', 'g', '2',  '\0'};
+    cout << string2 << endl;
+    
+    // Usually, instead of a list a initializers of type char, we put the string in double quotes.
+    // C++ adds the trailing \0 automatically. Although there are 15 characters in the stirng...
+    // ... the size of the array is actually 16 bytes, and includes the NUL (zero byte) at the end.
+    char string3[] = "This is string3";
+    cout << string3 << endl;
+    
+    // Now let's use the printString function below to print the string... 
+    // ... so we can see what's really happening
+    printString("Print string3 using printString(): ");
+    printString(string3);
+    cout << endl;
+    
+    // We must declare string4 to be at least long enough to hold the longest string we might store in it...
+    // ...plus one extra byte for the terminating NUL (zero byte).
+    char string4[100];
+    copyString(string4, string3);
+    printString("This is string4. It is a copy of string3: ");
+    printString(string4);
+    cout << endl;
+    
+    bool result;
+    result = compareString(string3, string4);
+    cout << (result ? "The strings are the same." : "The strings are different.") << endl;
+    
+    result = compareString("12345", "123456");
+    cout << (result ? "But these strings are the same." : "But these strings are different.") << endl;
+    
+    char reply;
+    cout << "Press q to quit: ";
+    cin >> reply; 
+    return 0;   
+}
+
+// The parameter is declared with no size info for the array. The function will print a string of any size.
+void printString (char s[])
+{
+    int i = 0;
+    // Loop until we reach the zero byte which marks the end of the string.
+    // Note that this function is general purpose and will print a string of any length.
+    // The only way to determine the length is to loop until the zero byte.
+    while (s[i] != '\0') {
+        cout << s[i];        // Print each character in turn
+        i++;                 // Increment the index by one
+    }
+    return;    
+}
+
+void copyString (char dest[], const char source[])
+{
+    int i = 0;
+    // Loop until we reach the zero byte which marks the end of the source string
+    // Note that this function is general purpose and will copy a string of any length.
+    // The only way to determine the length is to loop until the zero byte.
+    do {
+        dest[i] = source[i];
+        i++;
+    } while (source[i-1] != '\0'); 
+    return;    
+}
+
+bool compareString (const char s1[], const char s2[])
+{
+    int i = 0;
+    // Loop until we reach the zero byte which marks the end of either string
+    // Note that this function is general purpose and will compare strings of any length.
+    do {
+        if (s1[i] != s2[i]) {
+            return false;          
+        }
+        i++;
+    } while (s1[i-1] != '\0' && s2[i-1] != '\0'); 
+    return true;    
+}       

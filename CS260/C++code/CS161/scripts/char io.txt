@@ -1,0 +1,28 @@
+// This shows how to read and analyze user input using the char data type.
+// It is designed to illustrate various techniques.
+// It is not necessarily a great user interface!
+// Written by: Colin Goble
+// Date: 1-July-2006
+// Sources: None
+
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main ()
+{
+    char reply;
+    cout << "Please enter y or n: ";
+    cin >> reply;
+    if (reply == 'y' || reply == 'Y') {
+        cout << "You entered 'y'" << endl;
+    } else if (reply == 'n' || reply == 'N') {
+        cout << "You entered 'n'" << endl;
+    } else {
+        cout << "Please answer the question" << endl;
+    }
+    cout << "Enter q to quit: ";
+    cin >> reply;
+    return 0;
+}

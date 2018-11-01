@@ -1,0 +1,148 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head lang="en">
+<link rel="stylesheet" type="text/css" href="/shared/css/TemplateFiles/stylesheet.css" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Module 3 Lecture</title>
+</head>
+
+<body>
+<div id="container">
+<div id="decorative">&nbsp;&nbsp;</div>
+<div id="header">
+<h1><img src="../images/icons/Lecture_64.png" />&nbsp; Module 3 Activities, Reading and Homework</h1>
+</div>
+<div id="body">
+<h3>Array Implementation or Linked List Implementation?</h3>
+<blockquote>
+<blockquote>
+<table style="width: 964px;" border="1">
+<tbody>
+<tr>
+<th scope="col" width="160">&nbsp;</th>
+<th scope="col" width="366">
+<div align="left">Array Implementation of a <em>Sorted</em> List</div>
+</th>
+<th scope="col" width="416">
+<div align="left">Linked List Implementation of a <em>Sorted</em> List</div>
+</th>
+</tr>
+<tr>
+<th scope="row">
+<div align="left">Memory Usage</div>
+</th>
+<td>memory to store each data</td>
+<td>memory to store each data and the "next" pointer</td>
+</tr>
+<tr>
+<th scope="row">
+<div align="left">Ability to Grow/Shrink</div>
+</th>
+<td>
+<div align="left">once allocated, the array can not grow/shrink. Manually allocation of a bigger/smaller array and copy operations are required.</div>
+</td>
+<td>memory obtained as needed. Easy to grow/shrink.</td>
+</tr>
+<tr>
+<th scope="row">
+<div align="left">Operations</div>
+</th>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<th scope="row">
+<div align="right">getSize</div>
+</th>
+<td>constant operation O(1)</td>
+<td>constant operation O(1)</td>
+</tr>
+<tr>
+<th scope="row">
+<div align="right">retrieve</div>
+</th>
+<td>stepping through the array is required O(N)</td>
+<td>traversing is required O(N)</td>
+</tr>
+<tr>
+<th scope="row">
+<div align="right">display</div>
+</th>
+<td>stepping through the array is required O(N)</td>
+<td>traversing is required O(N)</td>
+</tr>
+<tr>
+<th scope="row" height="23">
+<div align="right">remove</div>
+</th>
+<td>stepping through the array followed by shifting O(N)</td>
+<td>traversing is requried O(N), no shifting is needed</td>
+</tr>
+<tr>
+<th scope="row" height="23">
+<div align="right">insert</div>
+</th>
+<td>stepping through the array followed by shifting O(N)</td>
+<td>traversing is required O(N), no shifting is needed</td>
+</tr>
+</tbody>
+</table>
+<p>Please ignore the O(1) and O(N) notation for now. We will come back to this later.</p>
+<p>Some questions to think about:</p>
+<ul>
+<li>Assume we have data get(int index); function in the list class which will return the data at the position "index". Which implementation (array or linked list) can provide an efficient solution for this newly added function?</li>
+<li>Assume we want a unsorted list ADT. Where do you want to insert data in an array implementation (the beginning, the end or somewhere in the middle)? How about linked list implementation?</li>
+<li>Think about the pros and cons to store pointer to the data in the individual cell of the array (or in the individual node of linked list )?
+<ul>
+<li>for array implementation: data ** dArray;</li>
+<li>for linked list implementation: struct node {data * item, node * next};</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<p>&nbsp;</p>
+</blockquote>
+<h3>What should I do for this module?</h3>
+<p><img src="../images/owl.jpg" alt="Reading" longdesc="../images/owl.jpg" height="185" width="179" /></p>
+<ul>
+<li>Review array implementation for list ADT
+<ul>
+<li>The video "arrayList" shows you how to use a dynamic array to implement a sorted list
+<ul>
+<li>three constructors are provided: default constructor, the constructor that initialize the list from external data file, the copy constructor.</li>
+<li>destructor to deallocate the list. Notice that you don't have to deallocate individual data in the list manually because the destructor of each data object will be invoked automatically. The beauty of OOP -- Every object takes care of itself.</li>
+<li>overload '=' operator. When it copies inidividual element over, it simply uses '=' for each data object. That is why you want to overload '=' in the data class. It makes the clients' work much easier.</li>
+<li>accessor functions: retrieve, display and getSize are declared as "const". display uses &lt;&lt; to display inidividual data object because we have taught data class how to do '&lt;&lt;' by overloading '&lt;&lt;' in the data class.</li>
+<li>mutator functions: insert, remove. Insert function will check the capacity of the list first. It will "expand" the array if needed. Whenever a new data needs to be added, the list will insert it at the "correct" position to maintain a sorted list. It uses '&lt;' to compare two data objects because we have overloaded '&lt;' in data class. Now you are reaping the benefits of operator overloading and object-oriented programming.</li>
+</ul>
+</li>
+<li><a href="../sampleCode/mod3/arrayList.zip">Here</a> is the zip file of the complete project for your reference.</li>
+</ul>
+</li>
+<li>Explore other ways for array implementation:
+<ul>
+<li>The shifting in insert and remove really hurts the performance.</li>
+<li>How about storing pointers to objects in the array instead of objects themselves?</li>
+<li><a href="../sampleCode/mod3/arrayOfPointers.docx">Here</a> is the word file illustrating the "array of pointers to data objects " idea.</li>
+</ul>
+</li>
+<li>Get familiar with STL containers, <a href="http://www.cplusplus.com/reference/stl/vector/">vector</a> and <a href="http://www.cplusplus.com/reference/stl/list/">list</a>.
+<ul>
+<li>The video "useSTLvector" demonstrates some usage of STL vector.</li>
+<li><a href="../sampleCode/mod3/stlVector.zip">Here</a> is the zip file of the complete project for your reference.</li>
+</ul>
+</li>
+<li>Read and study Recursion chapters. Think about what "mirrors" mean and why we need it. Here is a sample project that has recursive implementation for some of the linked list member functions: <a href="../sampleCode/mod3/listADT.zip" target="_self">listADT.zip</a></li>
+<li>Now it is time for some hands on programming time. You need to complete project 1 this week. Please make sure you design various test cases for each function of the list ADT. You have to include your own data file (with a sufficient set of data!) in the project.</li>
+<li>Lab 3 is about thinking recursively. You should start working on it this week.</li>
+<li>When you feel you have finished studying the topics, you need to complete the on-line quiz 2 by the end of this week. Quiz 2 covers the topics of recursion. You will find this quiz in the table of contents for this module.</li>
+</ul>
+<h3>Video Lectures:</h3>
+<p>arrayList, arrayOfPointers, useSTLvector</p>
+<p><a href="../videos/mod_3.html"><img src="../images/streamingmedia.jpg" alt="Week1 Videos" longdesc="../images/streamingmedia.jpg" height="90" border="0" width="90" /></a></p>
+<p>&nbsp;</p>
+</div>
+<div style="text-align: center;" id="footer"><i>Module 3 </i></div>
+</div>
+</body>
+</html>

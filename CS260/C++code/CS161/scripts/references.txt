@@ -1,0 +1,30 @@
+// This program demonstrates reference parameters
+// Author: Colin Goble
+// Date: 26-July-2006
+// Sources: None
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+void doIt(int &p);
+//void doIt(int p);
+
+int main()
+{
+    int x;
+    x = 10;
+    cout << "x before call to doIt is " << x << endl;
+    doIt(x);
+    cout << "x after call to doIt is " << x << endl;
+    char reply;
+    cout << "Enter q to quit: ";
+    cin >> reply;
+    return 0;
+}
+
+void doIt(int &p)
+// void doIt(int p)
+{
+    p = 20;
+}

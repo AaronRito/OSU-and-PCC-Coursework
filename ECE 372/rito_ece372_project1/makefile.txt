@@ -1,0 +1,7 @@
+all: clean build
+
+build:
+        g++ chater.c -o chater
+
+clean:
+        rm -f chater

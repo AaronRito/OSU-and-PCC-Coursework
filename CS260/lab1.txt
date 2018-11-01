@@ -1,0 +1,18 @@
+lab1:
+hello.cpp
+makefile
+CXX = g++
+CXXFLAGS = -std=c++0x
+CXXFLAGS = -Wall
+CXXFLAGS = -pedantic-errors
+CXXFLAGS = -g
+
+SRC1 = hello.cpp
+
+HEADER =  
+
+finalProject: ${SRC1}  ${Header}
+	${CXX} ${CXXFLAGS}  ${SRC1}  -o MyHello 
+
+clean:
+	 rm -f MyHello

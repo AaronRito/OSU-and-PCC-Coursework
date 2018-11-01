@@ -1,0 +1,28 @@
+// This shows how to read and analyze user input using the string data type.
+// It is designed to illustrate various techniques.
+// It is not necessarily a great user interface!
+// Written by: Colin Goble
+// Date: 1-July-2006
+// Sources: None
+
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main ()
+{
+    string reply;
+    cout << "Please enter Yes(y) or No(n) ";
+    cin >> reply;
+    if (reply.substr(0, 1) == "y" || reply.substr(0, 1) == "Y") {
+        cout << "You entered Yes" << endl;
+    } else if (reply.substr(0, 1) == "n" || reply.substr(0, 1) == "N"){
+        cout << "You entered No" << endl;
+    } else {
+        cout << "Please answer the question" << endl;
+    }
+    cout << "Enter q to quit: ";
+    cin >> reply;
+    return 0;
+}

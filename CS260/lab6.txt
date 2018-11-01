@@ -1,0 +1,49 @@
+int height(node * root)
+{
+        if (root == NULL)
+        return -1;
+        return (1 + max(height(root->left), height(root->right)));
+}
+Welcome to the Proficiency Demo!
+
+Inorder traversal: 66  90  100  100  115  135  138  198  215  216  226  231  242  246
+
+Level 1: 216
+Level 2: 215 and 246
+Level 3: 138
+Level 4: 135 and 198
+Level 5: 66
+Level 6: 90
+Level 7: 100
+Level 8: 115
+Level 9: 100
+Level 3: 226
+Level 4: 231
+Level 5: 242
+
+
+This tree contains 14 items
+My node count is: 14
+My height calculation 1 is: 8
+My height calculation 2 is: 8
+My sum of the data is: 2318
+
+
+The resulting tree after your function ran is:
+Inorder traversal: 66  90  100  100  115  135  138  198  215  216  226  231  242  246
+
+Level 1: 216
+Level 2: 215 and 246
+Level 3: 138
+Level 4: 135 and 198
+Level 5: 66
+Level 6: 90
+Level 7: 100
+Level 8: 115
+Level 9: 100
+Level 3: 226
+Level 4: 231
+Level 5: 242
+
+
+This tree contains 14 items

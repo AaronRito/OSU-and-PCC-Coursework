@@ -1,0 +1,59 @@
+// This program reads a file of numbers.
+// It calculates the total and the average.
+// Written by: Colin Goble
+// Sources: None
+// Date: 7-July-2006
+
+#include <iostream>
+#include <iomanip>
+#include <fstream>
+#include <string>
+
+using namespace std;
+
+int main ()
+{
+    // Declarations
+    string reply;
+    double number;
+    double total;
+    int count;
+    string inputFileName;
+    ifstream inputFile;
+
+    cout << fixed << showpoint << setprecision(2);
+    cout << "Input file name: ";
+    getline(cin, inputFileName);
+    // Open the input file.
+    inputFile.open(inputFileName.c_str());      // Need .c_str() to convert a C++ string to a C-style string
+    // Check the file opened successfully.
+    if ( ! inputFile.is_open()) {
+        cout << "Unable to open input file." << endl;
+        cout << "Press enter to continue...";
+        getline(cin, reply);
+        exit(1);
+    }
+
+    count = 0;       // Must initialize the counter to zero
+    total = 0;       // Must initialize the accumulator to zero.
+
+    // The while statement reads the next token into 'number'
+    // It returns a value of 'false' at end-of-file, which terminates the loop.
+    while (inputFile >> number) {
+        count++;     // Increment the counter
+        cout << setw(5) << count << setw(20) << number << endl;
+        total += number;
+    }
+
+    cout << "The total is: " << setw(11) << total << endl;
+    // Be careful not to divide by zero!
+    if (count > 0) {
+        cout << "The average is: " << setw(9) << total / count << endl;     
+    }
+
+    // Close the input file stream
+    inputFile.close();
+    cout << "Press enter to continue...";
+    getline(cin, reply);
+    return 0;	
+}

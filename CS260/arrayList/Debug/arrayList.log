@@ -1,0 +1,88 @@
+﻿  test.cpp
+c:\users\aaron\desktop\arraylist\arraylist.h(15): error C2872: 'data': ambiguous symbol
+  c:\users\aaron\desktop\arraylist\data.h(6): note: could be 'data'
+  c:\users\aaron\desktop\arraylist\arraylist.h(15): note: or       'data'
+c:\users\aaron\desktop\arraylist\arraylist.h(17): error C2872: 'data': ambiguous symbol
+  c:\users\aaron\desktop\arraylist\data.h(6): note: could be 'data'
+  c:\users\aaron\desktop\arraylist\arraylist.h(17): note: or       'data'
+c:\users\aaron\desktop\arraylist\arraylist.h(23): error C2872: 'data': ambiguous symbol
+  c:\users\aaron\desktop\arraylist\data.h(6): note: could be 'data'
+  c:\users\aaron\desktop\arraylist\arraylist.h(23): note: or       'data'
+c:\users\aaron\desktop\arraylist\test.cpp(25): error C2872: 'data': ambiguous symbol
+  c:\users\aaron\desktop\arraylist\data.h(6): note: could be 'data'
+  c:\users\aaron\desktop\arraylist\test.cpp(25): note: or       'data'
+c:\users\aaron\desktop\arraylist\test.cpp(26): error C2872: 'data': ambiguous symbol
+  c:\users\aaron\desktop\arraylist\data.h(6): note: could be 'data'
+  c:\users\aaron\desktop\arraylist\test.cpp(26): note: or       'data'
+  data.cpp
+c:\users\aaron\desktop\arraylist\data.cpp(33): error C2872: 'data': ambiguous symbol
+  c:\users\aaron\desktop\arraylist\data.h(6): note: could be 'data'
+  c:\users\aaron\desktop\arraylist\data.cpp(33): note: or       'data'
+c:\users\aaron\desktop\arraylist\data.cpp(58): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(119): note: see declaration of 'strcpy'
+c:\users\aaron\desktop\arraylist\data.cpp(63): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(119): note: see declaration of 'strcpy'
+c:\users\aaron\desktop\arraylist\data.cpp(79): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(119): note: see declaration of 'strcpy'
+c:\users\aaron\desktop\arraylist\data.cpp(90): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(119): note: see declaration of 'strcpy'
+c:\users\aaron\desktop\arraylist\data.cpp(98): error C2872: 'data': ambiguous symbol
+  c:\users\aaron\desktop\arraylist\data.h(6): note: could be 'data'
+  c:\users\aaron\desktop\arraylist\data.cpp(98): note: or       'data'
+c:\users\aaron\desktop\arraylist\data.cpp(112): error C2872: 'data': ambiguous symbol
+  c:\users\aaron\desktop\arraylist\data.h(6): note: could be 'data'
+  c:\users\aaron\desktop\arraylist\data.cpp(112): note: or       'data'
+c:\users\aaron\desktop\arraylist\data.cpp(127): error C2872: 'data': ambiguous symbol
+  c:\users\aaron\desktop\arraylist\data.h(6): note: could be 'data'
+  c:\users\aaron\desktop\arraylist\data.cpp(127): note: or       'data'
+  arraylist.cpp
+c:\users\aaron\desktop\arraylist\arraylist.h(15): error C2872: 'data': ambiguous symbol
+  c:\users\aaron\desktop\arraylist\data.h(6): note: could be 'data'
+  c:\users\aaron\desktop\arraylist\arraylist.h(15): note: or       'data'
+c:\users\aaron\desktop\arraylist\arraylist.h(17): error C2872: 'data': ambiguous symbol
+  c:\users\aaron\desktop\arraylist\data.h(6): note: could be 'data'
+  c:\users\aaron\desktop\arraylist\arraylist.h(17): note: or       'data'
+c:\users\aaron\desktop\arraylist\arraylist.h(23): error C2872: 'data': ambiguous symbol
+  c:\users\aaron\desktop\arraylist\data.h(6): note: could be 'data'
+  c:\users\aaron\desktop\arraylist\arraylist.h(23): note: or       'data'
+c:\users\aaron\desktop\arraylist\arraylist.cpp(16): error C2872: 'data': ambiguous symbol
+  c:\users\aaron\desktop\arraylist\data.h(6): note: could be 'data'
+  c:\users\aaron\desktop\arraylist\arraylist.cpp(16): note: or       'data'
+c:\users\aaron\desktop\arraylist\arraylist.cpp(22): error C2872: 'data': ambiguous symbol
+  c:\users\aaron\desktop\arraylist\data.h(6): note: could be 'data'
+  c:\users\aaron\desktop\arraylist\arraylist.cpp(22): note: or       'data'
+c:\users\aaron\desktop\arraylist\arraylist.cpp(28): error C2872: 'data': ambiguous symbol
+  c:\users\aaron\desktop\arraylist\data.h(6): note: could be 'data'
+  c:\users\aaron\desktop\arraylist\arraylist.cpp(28): note: or       'data'
+c:\users\aaron\desktop\arraylist\arraylist.cpp(65): error C2872: 'data': ambiguous symbol
+  c:\users\aaron\desktop\arraylist\data.h(6): note: could be 'data'
+  c:\users\aaron\desktop\arraylist\arraylist.cpp(65): note: or       'data'
+c:\users\aaron\desktop\arraylist\arraylist.cpp(84): error C2872: 'data': ambiguous symbol
+  c:\users\aaron\desktop\arraylist\data.h(6): note: could be 'data'
+  c:\users\aaron\desktop\arraylist\arraylist.cpp(84): note: or       'data'
+c:\users\aaron\desktop\arraylist\arraylist.cpp(100): error C2872: 'data': ambiguous symbol
+  c:\users\aaron\desktop\arraylist\data.h(6): note: could be 'data'
+  c:\users\aaron\desktop\arraylist\arraylist.cpp(100): note: or       'data'
+c:\users\aaron\desktop\arraylist\arraylist.cpp(112): error C2678: binary '<': no operator found which takes a left-hand operand of type 'data' (or there is no acceptable conversion)
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\system_error(436): note: could be 'bool std::operator <(const std::error_condition &,const std::error_condition &) noexcept'
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\system_error(427): note: or       'bool std::operator <(const std::error_code &,const std::error_code &) noexcept'
+  c:\users\aaron\desktop\arraylist\arraylist.cpp(112): note: while trying to match the argument list '(data, const data)'
+c:\users\aaron\desktop\arraylist\arraylist.cpp(116): error C2678: binary '==': no operator found which takes a left-hand operand of type 'data' (or there is no acceptable conversion)
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\system_error(389): note: could be 'bool std::operator ==(const std::error_condition &,const std::error_condition &) noexcept'
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\system_error(381): note: or       'bool std::operator ==(const std::error_condition &,const std::error_code &) noexcept'
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\system_error(373): note: or       'bool std::operator ==(const std::error_code &,const std::error_condition &) noexcept'
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\system_error(365): note: or       'bool std::operator ==(const std::error_code &,const std::error_code &) noexcept'
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\exception(339): note: or       'bool std::operator ==(const std::exception_ptr &,std::nullptr_t) throw()'
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\exception(334): note: or       'bool std::operator ==(std::nullptr_t,const std::exception_ptr &) throw()'
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\exception(329): note: or       'bool std::operator ==(const std::exception_ptr &,const std::exception_ptr &) throw()'
+  c:\users\aaron\desktop\arraylist\arraylist.cpp(116): note: while trying to match the argument list '(data, const data)'
+c:\users\aaron\desktop\arraylist\arraylist.cpp(133): error C2872: 'data': ambiguous symbol
+  c:\users\aaron\desktop\arraylist\data.h(6): note: could be 'data'
+  c:\users\aaron\desktop\arraylist\arraylist.cpp(133): note: or       'data'
+c:\users\aaron\desktop\arraylist\arraylist.cpp(138): error C2872: 'data': ambiguous symbol
+  c:\users\aaron\desktop\arraylist\data.h(6): note: could be 'data'
+  c:\users\aaron\desktop\arraylist\arraylist.cpp(138): note: or       'data'
+c:\users\aaron\desktop\arraylist\arraylist.cpp(172): error C2872: 'data': ambiguous symbol
+  c:\users\aaron\desktop\arraylist\data.h(6): note: could be 'data'
+  c:\users\aaron\desktop\arraylist\arraylist.cpp(172): note: or       'data'
+  Generating Code...

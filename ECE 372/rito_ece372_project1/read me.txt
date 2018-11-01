@@ -1,0 +1,25 @@
+Aaron Rito
+ECE 372
+Project 1
+
+The server is multithreaded and does not provide chat function itself. To chat, open 2 clients. The server will respond
+when messages are sent and pass them on to all clients. Only one message can be sent by a client at a time. When the 
+message is sent any messages in the buffer will appear. 
+
+To run the programs:
+Place the files in a directory on the osu flip server
+Build the c file. In bash type: make
+Start the server in bash: python chat_server.py
+In a new putty window, start the first client with the name "localhost" and the port number "9019". In bash: chater localhost 9019 
+In another new putty window, start the second client with the same command. 
+The clients will ask for a username. 
+The server will display the messages to all clients.
+
+Note: I did not have time to get the server running as well as I wanted, but it does function with multiple clients. With more time I could 
+have made the program "prettier", but I feel it functions as required, and adds some extra functions with the multi thread. 
+
+
+Sources:
+https://beej.us/guide/bgnet/output/html/multipage/clientserver.html#simpleclient
+http://www.bogotobogo.com/python/python_network_programming_tcp_server_client_chat_server_chat_client_select.php
+https://github.com/solomreb/cs372-prog1/blob/master/chatClient.c

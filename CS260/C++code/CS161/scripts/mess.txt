@@ -1,0 +1,88 @@
+
+#include <iostream>
+#include <iomanip>
+#include <fstream>
+#include <string>
+
+using namespace std;
+
+
+const int SUM_ARR_SZ = 100;
+unsigned int checkSums[SUM_ARR_SZ];
+string fileNames[SUM_ARR_SZ];
+
+void abortProgram();
+int runcheck();
+int runitegrity();
+
+int main ()
+{
+	
+	 
+	char reply;
+
+	cout << "Please select:" << endl;
+    cout << "A) Compute checksum of specified file" << endl;
+    cout << "B) Verify integrity of specified file" << endl;
+    cout << "Q) Quit" << endl;
+	cin  >> reply ;
+      
+	    if (reply == 'a' || reply == 'A') {
+			runcheck();}
+		else if (reply == 'b' || reply == 'B') {
+			runitegrity();}
+        else if  (reply == 'q' || reply == 'Q') {
+			abortProgram();}
+		return 0;
+}
+			 
+
+	
+	// Open the input file.
+ int runcheck() {
+
+	 string inputFileName;
+	 string reply; 
+	 ifstream inputFile;
+     
+
+	      cout << fixed << showpoint << setprecision(2);
+          cout << "Input file name: ";
+          getline(cin, inputFileName);
+	      inputFile.open(inputFileName.c_str(), ios::binary); 
+		  inputFile.seekg(0, ios_base::end);
+          int fileLen = inputFile.tellg();
+          inputFile.seekg(0, ios_base::beg);
+		  inputFile.read(chararray, fileLen);
+          inputFile.close();
+          inputFile.clear(std::ios_base::goodbit);
+    
+		  if ( ! inputFile.is_open()) {
+        cout << "Unable to open input file." << endl;
+        cout << "Press enter to continue...";
+        getline(cin, reply);
+        exit(1);
+    }
+
+int runitegrity();
+{
+	{
+    char string1[] = ;
+    char string2[10000];
+	strncpy (string2, string1, 100);
+	   if (strcmp(string1, string2) == 0) {
+        cout << "Using strcmp the strings are the same." << endl;
+    } else {
+        cout << "Using strcmp the strings are different." << endl;
+    }
+    
+
+	// This function aborts the program without 'flashing off the screen'.
+void abortProgram();
+
+{
+    string line;
+    cout << "Please press <Enter> to quit:";
+    getline(cin, line);
+    exit(1);
+}

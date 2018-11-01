@@ -1,0 +1,18 @@
+{
+	 string inputFileName;
+	 ifstream inputFile;
+	 string reply;
+
+    cout << fixed << showpoint << setprecision(2);
+    cout << "Input file name: ";
+    getline(cin, inputFileName);
+    
+	
+	// Open the input file.
+    inputFile.open(inputFileName.c_str());     
+    if ( ! inputFile.is_open()) {
+        cout << "Unable to open input file." << endl;
+        cout << "Press enter to continue...";
+        getline(cin, reply);
+        exit(1);
+    }

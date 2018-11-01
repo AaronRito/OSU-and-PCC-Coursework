@@ -1,0 +1,75 @@
+
+#include <iostream>
+
+using namespace std;
+
+double DoAddition(double x, double y);
+double DoSubtraction(double x, double y);
+double DoMultiplication(double x, double y);
+double DoDivision(double x, double y);
+
+void main ()
+{
+    char oper;
+    double x, y, result;
+    bool validAnswer = true;
+
+    cout << "\n Enter two numbers:\n";
+    cin >> x >> y;
+    cout << "\n Enter an operator ( + - * /):\n";
+    cin >> oper;
+
+    switch (oper)
+    {
+    case '+':
+        result = DoAddition(x, y);
+        break;
+    case '-':
+        result = DoSubtraction(x, y);
+        break;
+    case '*':
+        result = DoMultiplication(x, y);
+        break;
+    case '/':
+        result = DoDivision(x, y);
+        break;
+    default:
+        cout << "Error - bad operator!";
+        validAnswer = false;
+    }
+
+    if (validAnswer)
+    {
+        cout << "\nThe result is: " << result;
+        cout << "\nPress a key then enter to exit..";
+        cin >> result;
+    }
+}
+
+double DoAddition(double x, double y)
+{
+    return x + y;
+}
+
+double DoSubtraction(double x, double y)
+{
+    return x - y;
+}
+
+double DoMultiplication(double x, double y)
+{
+    return x * y;
+}
+
+double DoDivision(double x, double y)
+{
+    double answer = -1.0;
+
+    if (y != 0.0)
+    {
+        answer = x / y;
+    }
+
+    return answer;
+}
+

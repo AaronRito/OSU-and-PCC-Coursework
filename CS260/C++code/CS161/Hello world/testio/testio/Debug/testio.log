@@ -1,0 +1,33 @@
+﻿Build started 7/21/2013 7:16:58 PM.
+     1>Project "C:\Users\aaron\Desktop\CS161\Hello world\testio\testio\testio.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt Source.cpp
+         Source.cpp
+     1>c:\users\aaron\desktop\cs161\hello world\testio\testio\source.cpp(53): error C3867: 'std::basic_string<_Elem,_Traits,_Alloc>::length': function call missing argument list; use '&std::basic_string<_Elem,_Traits,_Alloc>::length' to create a pointer to member
+                 with
+                 [
+                     _Elem=char,
+                     _Traits=std::char_traits<char>,
+                     _Alloc=std::allocator<char>
+                 ]
+     1>c:\users\aaron\desktop\cs161\hello world\testio\testio\source.cpp(63): error C2065: 'firstName' : undeclared identifier
+     1>c:\users\aaron\desktop\cs161\hello world\testio\testio\source.cpp(67): error C2065: 'firstName' : undeclared identifier
+     1>c:\users\aaron\desktop\cs161\hello world\testio\testio\source.cpp(67): error C2065: 'lastName' : undeclared identifier
+     1>c:\users\aaron\desktop\cs161\hello world\testio\testio\source.cpp(69): error C2065: 'firstName' : undeclared identifier
+     1>c:\users\aaron\desktop\cs161\hello world\testio\testio\source.cpp(69): error C2228: left of '.length' must have class/struct/union
+                 type is ''unknown-type''
+     1>c:\users\aaron\desktop\cs161\hello world\testio\testio\source.cpp(75): error C2065: 'firstName' : undeclared identifier
+     1>c:\users\aaron\desktop\cs161\hello world\testio\testio\source.cpp(76): error C2065: 'lastName' : undeclared identifier
+     1>c:\users\aaron\desktop\cs161\hello world\testio\testio\source.cpp(80): error C2065: 't1' : undeclared identifier
+     1>c:\users\aaron\desktop\cs161\hello world\testio\testio\source.cpp(80): error C2065: 't2' : undeclared identifier
+     1>c:\users\aaron\desktop\cs161\hello world\testio\testio\source.cpp(80): error C2065: 't3' : undeclared identifier
+     1>c:\users\aaron\desktop\cs161\hello world\testio\testio\source.cpp(83): error C2065: 'average' : undeclared identifier
+     1>c:\users\aaron\desktop\cs161\hello world\testio\testio\source.cpp(83): error C2065: 't1' : undeclared identifier
+     1>c:\users\aaron\desktop\cs161\hello world\testio\testio\source.cpp(83): error C2065: 't2' : undeclared identifier
+     1>c:\users\aaron\desktop\cs161\hello world\testio\testio\source.cpp(83): error C2065: 't3' : undeclared identifier
+     1>c:\users\aaron\desktop\cs161\hello world\testio\testio\source.cpp(87): error C2065: 'average' : undeclared identifier
+     1>Done Building Project "C:\Users\aaron\Desktop\CS161\Hello world\testio\testio\testio.vcxproj" (Build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:00.64

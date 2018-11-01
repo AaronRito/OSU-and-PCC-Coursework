@@ -1,0 +1,31 @@
+int LinkedList::sum(void)
+{
+	int sum = 0;
+	first = head;
+	while (first)
+	{
+		sum = sum + first->aData;
+		first = first->next;
+	}
+	
+	return sum;
+}
+int LinkedList::sumR(void)
+{
+	int sum = 0;
+	sum = sumR(head);
+	return sum;
+}
+int LinkedList::sumR(Node * first)
+{
+	if (first == NULL)
+		return 0;
+	else
+		return (first->aData + sumR(first->next));
+}
+9 items:
+241, 243, 97, 9, 76, 36, 19, 197, 234
+total = 1152
+
+sum() =  1152
+sumR() = 1152

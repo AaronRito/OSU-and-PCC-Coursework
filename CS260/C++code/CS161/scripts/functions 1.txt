@@ -1,0 +1,62 @@
+// This is a demonstration of how to use a function in C++
+// Author: Colin Goble
+// Date: 20-July-2006
+// Sources: None
+
+#include <iostream>
+#include <iomanip>
+#include <string>
+using namespace std;
+
+const double BASE_HOURS = 40.0;
+const double OVERTIME_RATE = 1.5;
+
+// This is the function prototype.
+// It is necessary because you must declare calculatePay() before you use it in main().
+double calculatePay (double hours, double rate);
+
+int main ()
+{
+    double hourlyRate, hoursWorked, grossPay;
+
+    cout << fixed << showpoint << setprecision(2);
+    cout << "What is your hourly rate: ";
+    cin >> hourlyRate;
+    cout << "How many hours did you work this week: ";
+    cin >> hoursWorked;
+    grossPay = calculatePay(hoursWorked, hourlyRate);
+    cout << "Your gross pay is $" << grossPay << endl;
+
+    char reply;
+    cout << "Enter q to quit: ";
+    cin >> reply;
+    return 0;
+}
+
+// Inputs: hours = hours worked
+//         rate = hourly rate
+// Output: gross pay earned
+// Calculation:
+//         The gross pay is hours worked times hourly rate
+//         but overtime is paid for hours in excess of BASE_HOURS
+//         at the rate of OVERTIME_RATE
+double calculatePay (double hours, double rate)
+{
+    double basePay;
+    double overtimePay;
+    if (hours <= BASE_HOURS) {
+        basePay = hours * rate;
+        overtimePay = 0.0;
+    } else {
+        basePay = BASE_HOURS * rate;
+        overtimePay = rate * OVERTIME_RATE * (hours - BASE_HOURS);
+    }
+    return basePay + overtimePay;
+}
+
+
+
+
+
+
+X= (loanamount * I)/ (1 - (pow((1+I), -(M/T))))

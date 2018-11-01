@@ -1,0 +1,47 @@
+x
+y
+z
+found y
+x
+z
+did not find y
+z
+did not find x
+did not find z
+bool LinkedList::del(char key)
+{
+	if (del(head, key))
+	{
+		return true;
+	}
+	else
+	{
+		del(head->next, key);
+		return true;
+	}
+		return false;
+}
+bool LinkedList::del(Node * first, char key)
+{
+	if (first == NULL)
+	{
+		return false;
+	}
+	if (first->aData == key)
+	{
+		Node * curr;
+		curr = head;
+		head = first->next;
+		first = first->next;
+		delete curr;
+		return true;
+	}
+	if (first->next && first->next->aData == key)
+	{
+		Node * curr;
+		curr = first->next;
+		first->next = first->next->next;
+		delete curr;
+		return true;
+	}
+};

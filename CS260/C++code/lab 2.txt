@@ -1,0 +1,206 @@
+
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+using namespace std;
+//#include <string>
+#include <cstring>
+
+const int MAX_CHAR = 100;
+const int MAX_CAP = 10;
+void pause();
+float getFloat();
+float getGpa();
+void getString(char str[], int capacity);
+
+enum Year {freshman, sophomore, junior, senior};
+
+struct Address
+{
+	char	street[MAX_CHAR];
+	char	city[MAX_CHAR];
+	char	zip[MAX_CHAR];
+};
+struct Student
+{
+	char	name[MAX_CHAR];
+	float	gpa;
+	Address	address;
+	Year	year;
+};
+
+bool isLessThan(const Student& s1, const Student& s2);
+int sum(const int& n1, int n2);
+void populateList(int list[], int& size);
+void displayList(const int list[], int size);
+int main()
+{
+	int number1 = 5;
+	int number2 = 6;
+	int currentSum;
+	int	aList[MAX_CAP];
+	int count = 0;
+
+	currentSum = sum(number1, number2);
+	cout << "sum: " << currentSum << endl;
+	cout << "number1 = " << number1 << endl;
+
+	populateList(aList, count);
+	displayList(aList, count);
+	/*
+	float	list[MAX_CAP];
+	char	response;
+	int		count = 0;
+	Student	list2[MAX_CAP];
+
+	list2[0].gpa = 4.0;
+	strcpy(list2[0].name, "sandy");
+	strcpy(list2[0].address.city, "portland");
+	
+	Student s1, s2;
+
+	s1.gpa = 4.0;
+	strcpy(s1.name, "abbey");
+
+	s2.gpa = 3.9;
+	strcpy(s2.name, "michael");
+
+	s1.year = freshman;
+	strcpy(s1.address.city, "portland");
+	strcpy(s1.address.street, "12000 sw 49th");
+	strcpy(s1.address.zip, "97123");
+
+	cout << "student 1: " << s1.name << '\t' << s1.gpa << endl;
+	if (isLessThan(s1, s2)) //if (s1 < s2)
+	{
+		cout << "s1 < s2" << endl;
+	}
+
+	s1 = s2; //warning!
+	if (isLessThan(s1, s2)) //if (s1 < s2)
+	{
+		cout << "s1 < s2" << endl;
+	}
+	else
+	{
+		cout << "s1 >= s2" << endl;
+	}
+
+	
+	float		gpa;
+	char		name[MAX_CHAR];
+
+	strcpy(name, "eric");
+	cout << name << " contains " << strlen(name) << " characters" << endl;
+	if (strcmp(name, "eric") == 0)
+	{
+		cout << "match!" << endl;
+	}
+
+	cout << "Please enter the name: ";
+	getString(name, MAX_CHAR);
+	cout << "Name: " << name << endl;
+	
+	cout << "Please enter the gpa: ";
+	gpa = getGpa();
+	cout << "Gpa: " << gpa << endl;
+	*/
+	pause();
+	return 0;
+}
+void displayList(const int list[], int size)
+{
+	int index;
+	for (index = 0; index < size; index++)
+	{
+		cout << "list[" << index << "]: " << list[index] << endl;
+	}
+}
+void populateList(int list[], int& size)
+{
+	char response;
+	size = 0;
+	do
+	{
+		cout << "Please enter gpa: ";
+		list[size] = getGpa();
+		size++;
+		cout << "Continue? (y/n) ";
+		cin >> response;
+		response = tolower(response);
+		cin.ignore(MAX_CHAR, '\n');
+	} while (size < MAX_CAP && response == 'y');
+}
+
+int sum(const int& n1, int n2)
+{
+	int result;
+	result = n1 + n2;
+	//n1 = -1000;
+	return result;
+}
+/*
+This function compares to passed in student objects by name. It returns true if s1 < s2, false otherwise
+in: s1, s2
+return: true/false
+*/
+bool isLessThan(const Student& s1, const Student& s2)
+{
+	return strcmp(s1.name, s2.name) < 0;
+}
+/*
+This functions returns a string from parameter.
+in: capacity
+out: str
+*/
+void getString(char str[], int capacity)
+{
+	cin.get(str, capacity, '\n');
+	while (!cin)
+	{
+		cin.clear();
+		cin.ignore(MAX_CHAR, '\n');
+		cout << "Enter a string: ";
+		cin.get(str, capacity, '\n');
+	}
+	cin.ignore(MAX_CHAR, '\n');
+}
+/*
+This function returns a floating point between 0 and 4 inclusive.
+return: 0 <= gpa <= 4.0
+*/
+float getGpa()
+{
+	float	gpa;
+	gpa = getFloat();
+	while (gpa < 0 || gpa > 4.0)
+	{
+		cout << "Gpa has to be between 0 and 4.0. Please try again: ";
+		gpa = getFloat();
+	}
+	return gpa;
+}
+/*
+This function returns an legal floating point number.
+return: float 
+*/
+float getFloat()
+{
+	float	value;
+
+	cin >> value;
+	while (!cin)
+	{
+		cin.clear(); //clear the flag
+		cin.ignore(MAX_CHAR, '\n'); //empty the buffer
+		cout << "Illegal float! Please try again: ";
+		cin >> value;
+	}
+	cin.ignore(MAX_CHAR, '\n');
+	return value;
+}
+void pause()
+{
+	char ch;
+	cout << "press any key to continue ..." << endl;
+	cin >> ch;
+}

@@ -1,0 +1,27 @@
+// This program demonstrates default parameters
+// Author: Colin Goble
+// Date: 26-July-2006
+// Sources: None
+
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+void printIt(string message = "Hello World!");
+
+int main()
+{
+    printIt ("Hello from Colin");
+    printIt ();
+
+    char reply;
+    cout << "Enter q to quit: ";
+    cin >> reply;
+    return 0;
+}
+
+void printIt(string message) 
+{
+    cout << message << endl; 
+}

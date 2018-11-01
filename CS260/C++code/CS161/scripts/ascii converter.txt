@@ -1,0 +1,49 @@
+// Demonstrates how to convert a character (char)
+// to its equivalent code in ASCII (int), and vice versa.
+// Author: Colin Goble
+// Date: 24-July-2006
+
+#include <iostream>
+#include <iomanip>
+
+using namespace std;
+
+int main ()
+{
+    bool finished = false;
+    int selection;
+    char letter;                  // Note that letter is of type 'char'.
+    int asciiCode;                // Note that asciiCode is of type 'int'.
+    while (! finished) {
+        cout << "What do you want to do?" << endl;
+        cout << "1. Convert ASCII to Decimal?" << endl;
+        cout << "2. Convert Decimal to ASCII?" << endl;
+        cout << "3. Quit?" << endl;
+        cout << "Enter 1, 2 or 3: ";
+        cin  >> selection;
+        switch (selection) { 
+            case 1:
+                cout << "Please enter a letter: ";
+                cin >> letter;
+                // Note the use of the <static_cast> to convert char to int.
+                asciiCode = static_cast<int>(letter);
+                cout << "The ASCII code for the letter " << letter << " is " << asciiCode << endl;
+                break;
+            case 2:
+                cout << "Please enter a number: ";
+                cin >> asciiCode;        		
+                if (asciiCode < 0 || asciiCode > 127) {
+                    cout << "The number must be between 0 and 127" << endl;              
+                } else {
+                    // Note the use of the <static_cast> to convert int to char.   		
+                    letter = static_cast<char>(asciiCode);
+                    cout << "The letter represented by decimal " << asciiCode << " is " << letter << endl;
+                }
+                break;
+            case 3:
+                finished = true;
+                break;
+        } 
+    }
+    return 0;
+}

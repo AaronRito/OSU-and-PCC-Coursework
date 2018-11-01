@@ -1,0 +1,12 @@
+####READ ME#######
+Author: Aaron Rito
+Date: 7/15/17
+Client: CS325 hmwk 3 prob 4 and 5
+
+To run the program, make sure the properly formatted "amount.txt" file is in the same folder/directory.
+Enter "python ./change.py" into the command line.
+The program will print some timing information and store the new data in a file called "change.txt" 
+If "change.txt" already exists, the program will append the file, not overwrite it. 
+Please delete "change.txt" in between trials for best results, unless you want to save all the trial data in the same file. 
+
+source: http://interactivepython.org/courselib/static/pythonds/Recursion/DynamicProgramming.html

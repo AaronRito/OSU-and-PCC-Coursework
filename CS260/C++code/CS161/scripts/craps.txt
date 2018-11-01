@@ -1,0 +1,113 @@
+// Beginnings of a game of "Craps".
+// Author: Colin Goble
+// Date: 20-July-2006
+// Sources: None
+
+#include <iostream>
+#include <string>
+#include <cmath>
+#include <ctime>
+
+using namespace std;
+
+// This are the function prototypes
+int rollADie();
+void abortProgram();
+
+int main ()
+{
+    char reply;
+    string line;
+    // This is an example of a 'switch' using a char.
+    cout << "Do you wish to play craps? (y/n) ";
+    getline(cin, line);
+    if (line.length() == 0) {
+        reply = 'y';
+    } else {
+        reply = line.at(0);
+    }
+    switch (reply) {
+        case 'n':
+        case 'N':
+            cout << "Goodbye." << endl;
+            abortProgram();
+        case 'y':
+        case 'Y':
+            cout << "Welcome to Colin's Craps table!!!" << endl;
+            break;
+        default:
+            cout << "Please answer the question." << endl;
+            abortProgram();
+    }
+
+    // 'Seed' the random number generator
+    srand((unsigned)time(NULL));
+    int die1, die2;
+    int point;
+    int total;
+    die1 = rollADie();
+    die2 = rollADie();
+    point = die1 + die2;
+    cout << "The point is " << point << endl;
+    if (point == 7 || point == 11) {
+        cout << "Player wins!!!" << endl;
+    } else if (point == 2 || point == 3 || point == 12) {
+        cout << "Player loses!!!" << endl;
+    } else {
+        do {
+            cout << "Press enter to roll the dice:";
+            getline (cin, line);
+            die1 = rollADie();
+            die2 = rollADie();
+            total = die1 + die2;
+            cout << "The total is " << total << endl;
+        } while ( total != 7 && total != point );
+        if (total == point) {
+            cout << "Player wins!!!" << endl;
+        } else {
+            cout << "Player loses!!!" << endl;
+        }
+    }
+
+    cout << "Please press <Enter> to quit:";
+    getline(cin, line);
+
+    return 0;
+}
+
+int rollADie()
+{
+    int die;
+    // Generate a random number between 1 and 6.
+    die = 1 + rand() % 6;
+    // Demonstrates a 'switch' statement using an int.
+    switch (die) {
+        case 1:
+            cout << "You rolled a one" << endl;
+            break;
+        case 2:
+            cout << "You rolled a two" << endl;
+            break;
+        case 3:
+            cout << "You rolled a three" << endl;
+            break;
+        case 4:
+            cout << "You rolled a four" << endl;
+            break;
+        case 5:
+            cout << "You rolled a five" << endl;
+            break;
+        default:
+            cout << "You rolled a six" << endl;
+    }
+    return die;
+}
+
+// This function aborts the program without 'flashing off the screen'.
+void abortProgram()
+{
+    string line;
+    cout << "Please press <Enter> to quit:";
+    getline(cin, line);
+    exit(1);
+}

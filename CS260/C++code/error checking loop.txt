@@ -1,0 +1,6 @@
+while (!cin)
+	{
+		cin.clear(); //clear flag
+		cin.ignore(100,'\n'); //empty buffer
+		cout << "try again";
+		cin >> gpa;

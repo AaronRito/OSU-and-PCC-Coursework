@@ -1,0 +1,108 @@
+// Simulates the rolling of two dice, and counts the number of times each total occurs.
+// Then it displays the total that occurred most frequently and least frequently.
+// Author: Colin Goble
+// Date: 22-July-2006
+// Sources: None
+
+#include <iostream>
+#include <iomanip>
+#include <string>
+#include <cmath>
+#include <ctime>
+
+const int NUMBER_OF_ROLLS = 100;
+
+using namespace std;
+
+// These ares the function prototypes
+int  rollADie();
+
+int main ()
+{
+    // There are 13 counters numbered from [0] to [12].
+    // counter[5], for example, counts the number of times a total of 5 is rolled.
+    // Note that counter[0] and counter[1] will always be zero, since two dice cannot add to 0 or 1.
+    int counter[13] = {0};  // Initialize the counters to zero.
+
+    // 'Seed' the random number generator.
+    // You must do this ONCE at the beginning of your program.
+    srand((unsigned)time(NULL));
+
+    // Roll the dice NUMBER_OF_ROLLS times
+    // and update the counter array
+    for (int i = 0; i < NUMBER_OF_ROLLS; i++)
+    {
+        int die1 = rollADie();
+        int die2 = rollADie();
+        int total = die1 + die2;
+        // Increment by 1 the appropriate counter in the array.
+        // If the total is 6, say, we increment counter[6] by 1.
+        counter[total]++;
+    }
+
+    // Display the counter array
+    for (int i = 2; i <= 12; i++) {
+        cout << "The total " << setw(2) << i << " was rolled "
+             << setw(6) << counter[i] << " times." << endl;
+    }
+
+    // Calculate the total that occurred most frequently and least frequently.
+    // Note that neither 0 or 1 are possible, so we start the search at 2.
+    int candidateMinimum, candidateMaximum;
+    int candidateMinimumIndex, candidateMaximumIndex;
+    candidateMaximum = counter[2];
+    candidateMaximumIndex = 2;
+    candidateMinimum = counter[2];
+    candidateMinimumIndex = 2;
+    for (int i = 3; i <= 12; i++) {
+        if (counter[i] > candidateMaximum) {
+            candidateMaximum = counter[i];
+            candidateMaximumIndex = i;
+        }
+        if (counter[i] < candidateMinimum) {
+            candidateMinimum = counter[i];
+            candidateMinimumIndex = i;
+        }
+    }
+
+    // Display the results
+    cout << "The total that occurred most frequently was " << candidateMaximumIndex << endl;
+    cout << "It was rolled " << candidateMaximum << " times." << endl;
+    cout << "The total that occurred least frequently was " << candidateMinimumIndex << endl;
+    cout << "It was rolled " << candidateMinimum << " times." << endl;
+
+    // End the program
+    char reply;
+    cout << "Enter q to quit: ";
+    cin >> reply;
+    return 0;
+}
+
+int rollADie()
+{
+    int die;
+    // Generate a random number between 1 and 6.
+    die = 1 + rand() % 6;
+    // Demonstrates a 'switch' statement using an int.
+    switch (die) {
+        case 1:
+            cout << "You rolled a one" << endl;
+            break;
+        case 2:
+            cout << "You rolled a two" << endl;
+            break;
+        case 3:
+            cout << "You rolled a three" << endl;
+            break;
+        case 4:
+            cout << "You rolled a four" << endl;
+            break;
+        case 5:
+            cout << "You rolled a five" << endl;
+            break;
+        default:
+            cout << "You rolled a six" << endl;
+            break;
+    }
+    return die;
+}

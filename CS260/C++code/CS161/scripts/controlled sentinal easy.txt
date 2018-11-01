@@ -1,0 +1,28 @@
+// This is an example of a simple sentinel controlled loop
+// Author: Colin Goble
+// Date: 13-July-2006
+// Sources: None
+
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+const string password = "secret";
+
+int main ()
+{
+    string line;
+    cout << "Please enter the secret password: ";
+    getline(cin, line);
+    while (line != password) {
+        cout << "Incorrect. Please try again: "; 
+        getline(cin, line);   
+    }
+    cout << "Correct!" << endl;
+    
+    char reply;
+    cout << "Enter q to quit: ";
+    cin >> reply;
+    return 0;   
+}

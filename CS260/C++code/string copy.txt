@@ -1,0 +1,6 @@
+	strcpy(name, "eric");
+	cout << name << " contains " << strlen(name) << " characters" << endl;
+	if (strcmp(name, "eric") == 0)
+	{
+		cout << "match!" << endl;
+	}

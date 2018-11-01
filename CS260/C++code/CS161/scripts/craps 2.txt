@@ -1,0 +1,162 @@
+// A more fleshed out verson of the game of "Craps"
+// Date: 20-July-2006
+// Author: Colin Goble
+// Sources: None.
+
+#include <iostream>
+#include <iomanip>
+#include <string>
+#include <cmath>
+#include <ctime>
+
+using namespace std;
+
+// These are the function prototypes
+bool playGame();
+int  rollADie();
+void greeting();
+void abortProgram();
+
+int main ()
+{
+    int chips;
+    char reply;
+    string line;
+
+    // 'Seed' the random number generator.
+    // You must do this ONCE at the beginning of your program.
+    srand((unsigned)time(NULL));
+
+    // Display the welcome message
+    greeting();
+    // Give the player 100 chips to start.
+    chips = 100;
+    cout << "You have $100 to play with." << endl;
+    cout << "Your wager is $5 on each game" << endl;
+
+    // Note the use of a "bottom tested" loop here.
+    do {
+        if (chips >= 5) {
+            if (playGame() == true) {
+                chips += 5;
+            } else {
+                chips -= 5;
+            }
+        } else {
+            cout << "Sorry, you are bankrupt!!!" << endl;
+            // The 'break' breaks out of the do/while loop.
+            break;
+        }
+        cout << "You have $" << chips << " available." << endl;
+        cout << "Would you like to play again (y/n) ";
+        getline(cin, line);
+        if (line.length() == 0) {
+            reply = 'y';
+        } else {
+            reply = line.at(0);
+        }
+    } while (reply == 'y' || reply == 'Y');
+    cout << "Thank you for playing Colin's Craps!!!" << endl;
+    cout << "Please press <Enter> to quit:";
+    getline(cin, line);
+    return 0;
+}
+
+bool playGame()
+{
+    int die1, die2;
+    int point;
+    int total;
+    string reply;
+    die1 = rollADie();
+    die2 = rollADie();
+    point = die1 + die2;
+    cout << "The point is " << point << endl;
+    if (point == 7 || point == 11) {
+        cout << "Player wins!!!" << endl;
+        return true;
+    } else if (point == 2 || point == 3 || point == 12) {
+        cout << "Player loses!!!" << endl;
+        return false;
+    } else {
+        do {
+            cout << "Press enter to roll the dice:";
+            getline (cin, reply);
+            die1 = rollADie();
+            die2 = rollADie();
+            total = die1 + die2;
+            cout << "The total is " << total << endl;
+        } while ( ! (total == point || total == 7 ));
+        if (total == point) {
+            cout << "Player wins!!!" << endl;
+            return true;
+        } else {
+            cout << "Player loses!!!" << endl;
+            return false;
+        }
+    }
+}
+
+int rollADie()
+{
+    int die;
+    // Generate a random number between 1 and 6.
+    die = 1 + rand() % 6;
+    // Demonstrates a 'switch' statement using an int.
+    switch (die) {
+        case 1:
+            cout << "You rolled a one" << endl;
+            break;
+        case 2:
+            cout << "You rolled a two" << endl;
+            break;
+        case 3:
+            cout << "You rolled a three" << endl;
+            break;
+        case 4:
+            cout << "You rolled a four" << endl;
+            break;
+        case 5:
+            cout << "You rolled a five" << endl;
+            break;
+        default:
+            cout << "You rolled a six" << endl;
+    }
+    return die;
+}
+
+void greeting()
+{
+    string line;
+    char reply;
+    // This is an example of a 'switch' using a char.
+    cout << "Do you wish to play craps? (y/n) ";
+    getline(cin, line);
+    if (line.length() == 0) {
+        reply = 'y';
+    } else {
+        reply = line.at(0);    // reply.at(0) is the 'char' at position 0 in the string       
+    }                      
+    switch (reply) {
+        case 'n':
+        case 'N':
+            cout << "Goodbye." << endl;
+            abortProgram();
+        case 'y':
+        case 'Y':
+            cout << "Welcome to Colin's Craps table!!!" << endl;
+            return;
+        default:
+            cout << "Sorry, I didn't understand." << endl;
+            abortProgram();
+    }
+}
+
+// This function aborts the program without 'flashing off the screen'.
+void abortProgram()
+{
+    string line;
+    cout << "Please press <Enter> to quit:";
+    getline(cin, line);
+    exit(1);
+}

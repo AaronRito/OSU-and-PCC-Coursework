@@ -1,0 +1,65 @@
+#include <iostream>
+using namespace std;
+void pause();
+void displayMenu();
+char readInCmd();
+void executeCmd(char cmd);
+const int MAX_CHAR = 100;
+int main()
+{
+	char	command;
+
+	displayMenu();
+	
+	command = readInCmd();
+	while (command != 'q')
+	{
+		executeCmd(command);
+		displayMenu();
+		command = readInCmd();
+	}
+
+	pause();
+}
+void displayMenu()
+{
+	cout << endl << "Welcome to Roster 1.0!" << endl
+		<< "\ta. add a student" << endl
+		<< "\tl. list students" << endl
+		<< "\tr. remove student" << endl
+		<< "\ts. search student" << endl 
+		<< "\tq. quit" << endl << endl;
+}
+
+char readInCmd()
+{
+	char cmd;
+
+	cout << "Please enter the command (a, l, r, s, q): ";
+	cin >> cmd;
+	cin.ignore(MAX_CHAR, '\n');
+	return tolower(cmd);
+}
+
+void executeCmd(char cmd)
+{
+	switch (cmd)
+	{
+	case 'a': cout << "add is invoked" << endl;
+		break;
+	case 'l': cout << "list is invoked" << endl;
+		break;
+	case 's': cout << "search is invoked" << endl;
+		break;
+	case 'r': cout << "remove is invoked" << endl;
+		break;
+	default: cout << "illegal command!" << endl;
+		break;
+	}
+}
+void pause()
+{
+	char ch;
+	cout << "press any key to continue ..." << endl;
+	cin >> ch;
+}

@@ -1,0 +1,33 @@
+// This program demonstrates local and file scope
+// Author: Colin Goble
+// Date: 26-July-2006
+// Sources: None
+
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+void doIt();
+
+// This declaration of x is at file scope
+int x;
+
+int main()
+{
+    int x;
+    x = 10;
+    cout << "x before call to doIt is " << x << endl;
+    doIt();
+    cout << "x  after call to doIt is " << x << endl;
+    char reply;
+    cout << "Enter q to quit: ";
+    cin >> reply;
+    return 0;
+}
+
+void doIt()
+{
+    int x;
+    x = 20;
+}
